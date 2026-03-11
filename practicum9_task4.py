@@ -1,13 +1,7 @@
-with open('input.txt', 'w+', encoding='utf-8') as f:
-    while True:
-        s = input()
-        f.write(s + '\n')
-        if s == '':
-            break
-
-    f.seek(0)
+with open('input.txt', 'r', encoding='utf-8') as f:
+    all_lines = f.readlines()
     new_lines = []
-    for line in f:
+    for line in all_lines:
         if len(line.rstrip()) > 20:
             new_lines.append(line.strip() + '\n')
 
