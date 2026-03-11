@@ -1,12 +1,8 @@
-with open('input.txt', 'w+', encoding='utf-8') as f:
+with open('input.txt', 'r', encoding='utf-8') as f:
+    all_lines = f.readlines()
     with open('output.txt', 'w+', encoding='utf-8') as fi:
-        for i in range(3):
-            s = input()
-            f.write(s + '\n')
         cnt = 0
-        ans = 0
-        f.seek(0)
-        for num in f:
+        for num in all_lines:
             try:
                 new_num = int(num)
                 cnt += 1
@@ -24,5 +20,6 @@ with open('input.txt', 'w+', encoding='utf-8') as f:
             else:
                 ans += new_num
                 fi.write(str(ans))
+
 
 
